@@ -52,11 +52,15 @@ public class CatalogController {
             method = RequestMethod.GET,
             produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<ProductBoundary> getAllFiltered(
-            @RequestParam(required = false, defaultValue = "") String filterType,
+            @RequestParam(required = false, defaultValue = "All") String filterType,
             @RequestParam(required = false, defaultValue = "") String filterValue,
             @RequestParam(required = false, defaultValue = "ASC") String sortOrder,
-            @RequestParam(required = false, defaultValue = "id") String sortBy) {
+            @RequestParam(required = false, defaultValue = "productId") String sortBy,
+            @RequestParam(required = false, defaultValue = "0") String page,
+            @RequestParam(required = false, defaultValue = "10") String size,
+            @RequestParam(required = false, defaultValue = "0") String minPrice,
+            @RequestParam(required = false, defaultValue = "1000") String maxPrice) {
         return this.catalog
-                .getAllFiltered(filterType, filterValue, sortOrder, sortBy);
+                .getAllFiltered(filterType, filterValue, sortOrder, sortBy, page, size, minPrice, maxPrice);
     }
 }

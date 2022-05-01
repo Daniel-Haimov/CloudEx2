@@ -12,9 +12,11 @@ public interface CatalogDAO extends ReactiveMongoRepository<ProductEntity, Strin
 
     Flux<ProductEntity> findAllByName(@Param("name") String name, Sort sort);
 
-    Flux<ProductEntity> findAllByPriceGreaterThanEqual(@Param("price") double price, Sort sort);
-
-    Flux<ProductEntity> findAllByPriceLessThanEqual(@Param("price") double price, Sort sort);
-
     Flux<ProductEntity> findAllByCategory(@Param("category") String category, Sort sort);
+
+//    Flux<ProductEntity> findAllByPriceGreaterThanEqual(@Param("price") double price, Sort sort);
+
+    Flux<ProductEntity> findAllByPriceBetween(@Param("minimumValue") double minPrice, @Param("maximumValue") double maxPrice, Sort sort);
+
+//    Flux<ProductEntity> findAllByPriceLessThanEqual(@Param("price") double price, Sort sort);
 }

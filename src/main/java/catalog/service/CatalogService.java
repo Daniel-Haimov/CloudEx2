@@ -10,7 +10,7 @@ public interface CatalogService {
 
     Mono<ProductBoundary> store(ProductBoundary newProduct);
 
-    Flux<ProductBoundary> getAllFiltered(String filterType, String filterValue, String sortOrder, String sortBy);
+    Flux<ProductBoundary> getAllFiltered(String filterType, String filterValue, String sortOrder, String sortBy, String page, String size, String minPrice, String maxPrice);
 
     Mono<ProductBoundary> getById(String productId);
 }

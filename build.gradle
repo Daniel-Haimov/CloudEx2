@@ -18,10 +18,12 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-webflux-ui
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-webflux-ui', version: '1.6.7'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.8'
 	
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
+	
 }
 
 tasks.named('test') {
